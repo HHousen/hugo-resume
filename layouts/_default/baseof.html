@@ -21,6 +21,10 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/shakrmedia/tuesday@v1.1.0/build/tuesday.min.css" />
   <link href="{{ "css/resume.css" | absURL }}" rel="stylesheet">
   <link href="{{ "css/tweaks.css" | absURL }}" rel="stylesheet">
+  {{ with .Site.Params.favicon }}
+   <link rel="shortcut icon" type="image/x-icon" href="{{ . | absURL }}">
+   <link rel="icon" type="image/x-icon" href="{{ . | absURL }}">
+  {{ end }}
   {{ .Hugo.Generator }}
   {{ block "headfiles" . }}
    <!-- pl;aceholder -->
@@ -42,6 +46,7 @@
 
   <!-- Plugin JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <!-- Custom scripts for this template -->
   <script src="/js/resume.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google.analytics.trackerID }}"></script>
@@ -52,7 +57,6 @@
 
     gtag('config', '{{ .Site.Params.google.analytics.trackerID }}');
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script>
     new WOW().init();
   </script>
