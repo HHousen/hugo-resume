@@ -1,7 +1,8 @@
 <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
   <div class="my-auto" id="skills-content">
-    <h2 class="mb-5">Skills</h2>
-    {{ range $.Site.Data.skills }}
+    <h2 class="mb-5 wow tdFadeInDown" style="animation-delay: 0.2s">Skills</h2>
+    {{ range $index, $value := $.Site.Data.skills }}
+      <div class="wow tdFadeInRight" style="animation-delay: calc({{add $index 2}}s * 0.2)">
         <div class="subheading mb-3 skills-heading">{{ .grouping }}</div>
             <ul>
             {{ range .skills }}
@@ -18,6 +19,7 @@
                 {{ end }}
             {{ end }}
             </ul>
+        </div>
     {{ end }}
   </div>
 </section>
