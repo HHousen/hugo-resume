@@ -16,7 +16,6 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
   <link href='https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/shakrmedia/tuesday@v1.1.0/build/tuesday.min.css" />
   <link href="{{ "css/resume.css" | absURL }}" rel="stylesheet">
@@ -36,9 +35,11 @@
     {{ block "main" . }}
       {{ .Content }}
     {{ end }}
-
-    <span style="color: #999999; font-size: 60%;">Nifty <a href="https://codepen.io/wbeeftink/pen/dIaDH">tech tag lists</a> from <a class="pen-owner-link" href="https://codepen.io/wbeeftink">Wouter Beeftink</a> </span>
-    {{ with $.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }} | <span style="color: #999999; font-size: 60%;">Page content generated from commit: <a href="{{ . }}/{{ $.GitInfo.AbbreviatedHash }}" title="log: {{ $.GitInfo.Subject }}">{{ $.GitInfo.AbbreviatedHash }}</a>{{ end }}{{end}}
+    <footer class="footer text-center d-md-flex justify-content-between">
+      <div>Nifty <a href="https://codepen.io/wbeeftink/pen/dIaDH">tech tag lists</a> from <a href="https://codepen.io/wbeeftink">Wouter Beeftink</a> </div>
+      {{ with $.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }} | <span>Page content generated from commit: <a href="{{ . }}/{{ $.GitInfo.AbbreviatedHash }}" title="log: {{ $.GitInfo.Subject }}">{{ $.GitInfo.AbbreviatedHash }}</a>{{ end }}{{end}}
+      <div>&copy; <script>document.write(new Date().getFullYear());</script>, Designed and Coded by {{ .Site.Params.firstName }} {{ .Site.Params.lastName }}</div>
+    </footer>
   </div>
   <!-- Bootstrap core JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

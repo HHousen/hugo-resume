@@ -2,6 +2,10 @@
   visibility: hidden;
 }
 
+footer {
+  padding: 1rem;
+}
+
 .p-0{
   margin: 0 auto;
 }
