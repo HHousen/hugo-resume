@@ -1,0 +1,38 @@
+
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript Plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<!-- Custom Scripts -->
+{{ $jsSrc       := "js/resume.js" }}
+{{ $jsTarget    := "js/script.js" }}
+{{ if eq (getenv "HUGO_ENV") "production" }} <!-- Production Environment -->
+{{ $js := resources.Get $jsSrc | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ else }} <!-- Development Environment -->
+{{ $js := resources.Get $jsSrc }}
+<script src="{{ $js.RelPermalink }}"></script>
+{{ end }}
+
+<!-- Google Analytics -->
+{{ if eq (getenv "HUGO_ENV") "production" }}
+  {{ with .Site.Params.google_analytics.trackerID }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ . }}');
+  </script>
+  {{ end }}
+{{ end }}
+
+<script>
+  new WOW().init();
+</script>
