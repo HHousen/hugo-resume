@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>{{ .Title }}</title>
-  <meta property="og:title" content="{{ .Title }}" />
+  {{ if .IsHome }}
+    <title>{{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Site.Title }}" />
+  {{ else }}
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Title }}" />
+  {{ end }}
   <meta property="og:image" content="{{ .Site.Params.profileImage | absURL }}" />
   <meta name="description" content="{{ .Site.Params.description }}">
   <meta property="og:description" content="{{ .Site.Params.description }}" />
@@ -12,7 +17,7 @@
   {{ partial "css.html" . }}
   {{ .Hugo.Generator }}
   {{ block "headfiles" . }}
-   <!-- pl;aceholder -->
+
   {{ end }}
 </head>
 <body id="page-top">
@@ -21,12 +26,14 @@
     {{ block "main" . }}
       {{ .Content }}
     {{ end }}
-    <footer class="footer text-center d-md-flex justify-content-between">
+  </div>
+  <footer class="footer">
+    <div class="d-md-flex justify-content-between">
       <div>Nifty <a href="https://codepen.io/wbeeftink/pen/dIaDH">tech tag lists</a> from <a href="https://codepen.io/wbeeftink">Wouter Beeftink</a> </div>
       {{ with $.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }} | <span>Page content generated from commit: <a href="{{ . }}/{{ $.GitInfo.AbbreviatedHash }}" title="log: {{ $.GitInfo.Subject }}">{{ $.GitInfo.AbbreviatedHash }}</a>{{ end }}{{end}}
       <div>&copy; <script>document.write(new Date().getFullYear());</script>, Designed and Coded by {{ .Site.Params.firstName }} {{ .Site.Params.lastName }}</div>
-    </footer>
-  </div>
+    </div>
+  </footer>
   {{ partial "js.html" . }}
   {{ block "footerfiles" . }}
 

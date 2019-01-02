@@ -1,0 +1,9 @@
+<!-- Custom Script -->
+
+{{ if eq (getenv "HUGO_ENV") "production" }} <!-- Production Environment -->
+{{ $js := resources.Get .jsSrc | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ else }} <!-- Development Environment -->
+{{ $js := resources.Get .jsSrc }}
+<script src="{{ $js.RelPermalink }}"></script>
+{{ end }}

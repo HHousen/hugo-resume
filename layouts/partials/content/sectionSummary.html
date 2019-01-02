@@ -1,0 +1,27 @@
+<section class="resume-section min-height p-3 p-lg-5 d-flex flex-column" id="{{ .Scratch.Get "sectionId" }}">
+  <div id="projects-content">
+    <h2 class="{{ with .Params.subheading }}mb-0{{ else }}mb-5{{ end }} wow tdFadeInDown" style="animation-delay: 0.2s"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ with .Params.subheading }}
+      <div class="subheading mb-4 wow tdFadeInRight" style="animation-delay: 0.4s">{{ . }}</div>
+    {{ else }}
+      <p class="wow tdFadeInRight" style="animation-delay: 0.4s">{{ .Content }}</p>
+    {{ end }}
+    <div class="wow tdFadeInRight" style="animation-delay: 0.6s">
+      {{ partial "filters" . }}
+    </div>
+    {{ $featuredPages := where .Pages "Params.featured" true }}
+    <div class="row" id="grid">
+      {{ range $featuredPages }}
+        <div class="col-md-4 grid-item wow tdFadeInUp {{ range .Params.sorts }}{{ . }} {{ end }}" style="animation-delay: 0.8s">
+          {{ partial (printf "content/%s%s" .Section "Summary") . }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ if gt .Pages $featuredPages }}
+    <div class="my-auto">
+      <h3>Wait! There's more...</h3>
+      <p>See <a href="{{ .Permalink }}">all {{ .Title | pluralize }}</a> for more examples!</p>
+    </div>
+  {{ end }}
+</section>

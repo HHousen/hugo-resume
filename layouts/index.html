@@ -4,21 +4,21 @@
        {{ partial "portfolio/skills.html" . }}
    {{ end }}
    {{ if .Site.Params.showProjects }}
-      {{ with .Site.GetPage "section" "projects/creations" }}
+      {{ with .Site.GetPage "section" "projects" }}
          {{ .Scratch.Set "sectionId" "projects" }}
-         {{ partial "sectionSummary" . }}
+         {{ partial "content/sectionSummary" . }}
       {{ end }}
    {{ end }}
-   {{ if .Site.Params.showOpenSource }}
-      {{ with .Site.GetPage "section" "projects/contributions" }}
-         {{ .Scratch.Set "sectionId" "open" }}
-         {{ partial "sectionSummary" . }}
+   {{ if .Site.Params.showContributions }}
+      {{ with .Site.GetPage "section" "contributions" }}
+         {{ .Scratch.Set "sectionId" "contributions" }}
+         {{ partial "content/sectionSummary" . }}
       {{ end }}
    {{ end }}
    {{ if .Site.Params.showPublications }}
       {{ with .Site.GetPage "section" "publications" }}
          {{ .Scratch.Set "sectionId" "publications" }}
-         {{ partial "sectionSummary" . }}
+         {{ partial "content/sectionSummary" . }}
       {{ end }}
    {{ end }}
    {{ if .Site.Params.showExperience }}
@@ -33,4 +33,7 @@
          {{ partial "sectionSummary" . }}
       {{ end }}
    {{ end }}
+{{ end }}
+{{ define "footerfiles" }}
+  {{ partial "isotope" . }}
 {{ end }}
