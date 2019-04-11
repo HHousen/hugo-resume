@@ -28,8 +28,8 @@
     {{ end }}
   </div>
   <footer class="footer">
-    <div class="d-md-flex justify-content-between">
-      {{ with $.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }} | <span>Page content generated from commit: <a href="{{ . }}/{{ $.GitInfo.AbbreviatedHash }}" title="log: {{ $.GitInfo.Subject }}">{{ $.GitInfo.AbbreviatedHash }}</a>{{ end }}{{end}}
+    <div class="d-md-flex justify-content-between text-center">
+      <div>{{ with $.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }}Page content generated from commit: <a href="{{ . }}/{{ $.GitInfo.AbbreviatedHash }}" title="log: {{ $.GitInfo.Subject }}">{{ $.GitInfo.AbbreviatedHash }}</a>{{ end }}{{ end }}</div>
       <div>&copy; <script>document.write(new Date().getFullYear());</script>, Designed and Coded by {{ .Site.Params.firstName }} {{ .Site.Params.lastName }}</div>
     </div>
   </footer>
