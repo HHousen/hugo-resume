@@ -15,7 +15,7 @@
   <meta property="og:description" content="{{ .Site.Params.description }}" />
   <meta name="author" content="{{ .Site.Params.firstName }} {{ .Site.Params.lastName }}">
   {{ partial "css.html" . }}
-  {{ .Hugo.Generator }}
+  {{ hugo.Generator }}
   {{ block "headfiles" . }}
 
   {{ end }}
@@ -29,7 +29,6 @@
   </div>
   <footer class="footer">
     <div class="d-md-flex justify-content-between">
-      <div>Nifty <a href="https://codepen.io/wbeeftink/pen/dIaDH">tech tag lists</a> from <a href="https://codepen.io/wbeeftink">Wouter Beeftink</a> </div>
       {{ with $.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }} | <span>Page content generated from commit: <a href="{{ . }}/{{ $.GitInfo.AbbreviatedHash }}" title="log: {{ $.GitInfo.Subject }}">{{ $.GitInfo.AbbreviatedHash }}</a>{{ end }}{{end}}
       <div>&copy; <script>document.write(new Date().getFullYear());</script>, Designed and Coded by {{ .Site.Params.firstName }} {{ .Site.Params.lastName }}</div>
     </div>

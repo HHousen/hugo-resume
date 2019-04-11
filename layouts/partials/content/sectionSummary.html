@@ -12,7 +12,7 @@
     {{ $featuredPages := where .Pages "Params.featured" true }}
     <div class="row" id="grid">
       {{ range $featuredPages }}
-        <div class="col-md-4 grid-item wow tdFadeInUp {{ range .Params.sorts }}{{ . }} {{ end }}" style="animation-delay: 0.8s">
+        <div class="col-md-3 grid-item wow tdFadeInUp {{ range .Params.tags }}{{ . }} {{ end }}" style="animation-delay: 0.8s">
           {{ partial (printf "content/%s%s" .Section "Summary") . }}
         </div>
       {{ end }}

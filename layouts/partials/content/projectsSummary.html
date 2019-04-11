@@ -1,6 +1,7 @@
 <div class="card mb-4">
-  {{ with .Params.image }}
-    <img src="{{ . }}" class="card-img-top" alt="{{ .alt }}">
+  {{ with .Resources.GetMatch "image" }}
+    {{ $image := .Fit "500x500" }}
+    <a href="{{ $.Permalink }}"><img src="{{ $image.RelPermalink }}" class="card-img-top"></a>
   {{ end }}
   <div class="card-body">
     <h4 class="card-title">{{ .Title }}</h4>
