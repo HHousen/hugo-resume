@@ -10,7 +10,7 @@
                 <a href="mailto:{{ substr .Site.Params.email 0 5}}-remove-{{ substr .Site.Params.email 5 }}">{{ substr .Site.Params.email 0 5}}<span style="display:none">-remove-</span>{{ substr .Site.Params.email 5 }}</a>
               </div>
               {{ with .Site.Params.resumePDF }}
-                <a href="{{ . | absURL }}" role="button" class="btn btn-primary float-sm-right">PDF Resume</a>
+                <a href="{{ . | absURL }}" role="button" class="btn btn-primary float-sm-right wow tdFadeInLeft" style="animation-delay: 0.8s">PDF Resume</a>
               {{ end }}
         </div>
 
