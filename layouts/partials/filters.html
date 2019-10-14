@@ -1,4 +1,4 @@
-<div id="filters" class="btn-group filter-button-group mb-2">
+<div id="filters" class="btn-group flex-wrap filter-button-group mb-2">
   <button type="button" class="btn btn-outline-secondary active" data-filter="*">All</button>
   {{ range .Site.Params.tags }}
     <button type="button" class="btn btn-outline-secondary" data-filter=".{{ urlize . }}">{{ . | title}}</button>
