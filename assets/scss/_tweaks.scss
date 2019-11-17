@@ -14,12 +14,12 @@ body {
 }
 
 footer {
-  position: absolute;
-  right: 0;
-  left: 0;
-  @include media-breakpoint-up(lg) {
-    left: $sidebar-base-width;
-  }
+  // position: absolute;
+  // right: 0;
+  // left: 0;
+  // @include media-breakpoint-up(lg) {
+  //   left: $sidebar-base-width;
+  // }
   div {
     max-width: 75rem;
   }
