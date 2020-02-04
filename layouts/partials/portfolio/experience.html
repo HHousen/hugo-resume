@@ -5,10 +5,8 @@
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
           <div class="resume-content mr-auto">
             <h3 class="mb-0">{{ .title }}</h3>
-            <div class="subheading mb-3">{{ .subtitle }}</div>
-            {{ range .summary }}
-              <p class="mb-0">{{ . }}</p>
-            {{ end }}
+            <div class="subheading mb-3">{{ .subtitle | markdownify }}</div>
+            <p class="mb-0">{{ .summary | markdownify }}</p>
             <!-- <p class="wow tdFadeInRight" style="animation-delay: calc({{add $index 1.5}}s * 0.4)">{{ .summary }}</p> -->
           </div>
           <div class="resume-date text-md-right">

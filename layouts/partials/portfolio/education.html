@@ -4,12 +4,12 @@
             {{ range $index, $value := .Site.Data.education }}
               <div class="resume-item d-flex flex-column flex-md-row mb-5">
                 <div class="resume-content mr-auto">
-                  <h3 class="mb-0 wow tdFadeInUp" style="animation-delay: calc({{add $index 1}}s * 0.4)">{{ .school }}</h3>
+                  <h3 class="mb-0 wow tdFadeInUp" style="animation-delay: calc({{add $index 1}}s * 0.4)">{{ .school | markdownify }}</h3>
                   <div class="subheading mb-3 wow tdFadeInDown" style="animation-delay: calc({{add $index 1}}s * 0.4)">{{ .degree }}</div>
                   <div class="wow tdFadeInRight" style="animation-delay: calc({{add $index 1.5}}s * 0.4)">
-                    <div class="font-weight-bold">{{ .major }}</div>
+                    <div class="font-weight-bold">{{ .major | markdownify }}</div>
                     {{ range $key, $value := .notes }}
-                      <p class="mb-0"><span class="font-weight-bold">{{ $key }}: </span>{{ . }}</p>
+                      <p class="mb-0"><span class="font-weight-bold">{{ $key }}: </span>{{ . | markdownify }}</p>
                     {{ end }}
                   </div>
                 </div>
