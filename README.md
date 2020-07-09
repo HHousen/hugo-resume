@@ -2,7 +2,7 @@
 
 Created from [Start Bootstrap - Resume](https://startbootstrap.com/themes/resume/) and [eddiewebb/hugo-resume](https://github.com/eddiewebb/hugo-resume).
 
-This is a single-page website with a left-aligned navigation menu. Meant to highlight your achievements,work experience, and projects, this template modifies [eddiewebb/hugo-resume](https://github.com/eddiewebb/hugo-resume) by removing extra bloat (that I don't need), tweaking the design, adding some new components, and improving efficiency/speed. Includes an `/admin` endpoint through [netlifycms](https://www.netlifycms.org/) that allows authorized users to use a WYSIWYG editor and commit files back to markdown, but with a Wordpress/CMS like experience.
+This is a single-page website with a left-aligned navigation menu. Meant to highlight your achievements, work experience, and projects, this template modifies [eddiewebb/hugo-resume](https://github.com/eddiewebb/hugo-resume) by removing extra bloat (that I don't need), tweaking the design, adding some new components, and improving efficiency/speed. Includes an `/admin` endpoint through [netlifycms](https://www.netlifycms.org/) that allows authorized users to use a WYSIWYG editor and commit files back to markdown, but with a Wordpress/CMS like experience.
 
 ## Example
 
@@ -12,8 +12,13 @@ See [Hayden's site](https://haydenhousen.com) ([GitHub Repo](https://github.com/
 
 This theme uses a combination of a custom archetype `projects` and some data files to drive content.
 
-You can test the provided [exampleSite](exampleSite) after cloning with the command:
-`cd exampleSite;hugo -t hugo-resume --themesDir ../.. server`
+You can test the provided [example site](https://github.com/HHousen/hh-personal) with the commands:
+
+```
+git clone https://github.com/HHousen/hh-personal hugo-resume-example
+cd hugo-resume-example
+hugo server
+```
 
 ### Summary
 Edit the main `contents/_index.md with a brief bio/summary`
