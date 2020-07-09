@@ -1,37 +1,12 @@
-# hugo Resume
+# HUGO Résumé
 
-Created from [Start Bootstrap - Resume](https://startbootstrap.com/template-overviews/resume/).
+Created from [Start Bootstrap - Resume](https://startbootstrap.com/themes/resume/) and [eddiewebb/hugo-resume](https://github.com/eddiewebb/hugo-resume).
 
-This is basically a single-page website with auto-scrolling based on left-hand nav.  Dedicated project/publications pages allow more detail.  Includes a client-side search powered by fuse.js at '/search' but currently theme does not link to that anywhere.
+This is a single-page website with a left-aligned navigation menu. Meant to highlight your achievements,work experience, and projects, this template modifies [eddiewebb/hugo-resume](https://github.com/eddiewebb/hugo-resume) by removing extra bloat (that I don't need), tweaking the design, adding some new components, and improving efficiency/speed. Includes an `/admin` endpoint through [netlifycms](https://www.netlifycms.org/) that allows authorized users to use a WYSIWYG editor and commit files back to markdown, but with a Wordpress/CMS like experience.
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+## Example
 
-- [hugo Resume](#hugo-resume)
-	- [Examples](#examples)
-	- [Setup & Use](#setup-use)
-		- [Summary](#summary)
-		- [Data files](#data-files)
-		- [Projects](#projects)
-		- [Publications](#publications)
-		- [Template params](#template-params)
-	- [Credits](#credits)
-		- [Start Bootstrap Resume](#start-bootstrap-resume)
-
-<!-- /TOC -->
-
-## Examples
-
-![About You](https://raw.githubusercontent.com/eddiewebb/hugo-resume/master/images/about.png)
-
-![With optional Contact QR Code](https://raw.githubusercontent.com/eddiewebb/hugo-resume/master/images/qrcode.png)
-
-![Highlight skills with dev icons](https://raw.githubusercontent.com/eddiewebb/hugo-resume/master/images/skills.png)
-
-![List featured projects](https://raw.githubusercontent.com/eddiewebb/hugo-resume/master/images/projects.png)
-
-![Searchable content](https://raw.githubusercontent.com/eddiewebb/hugo-resume/master/images/search.png)
-
-See [Eddie's site](https://edwardawebb.com) for a live example.
+See [Hayden's site](https://haydenhousen.com) ([GitHub Repo](https://github.com/HHousen/hh-personal)) for a live example.
 
 ## Setup & Use
 
@@ -46,78 +21,23 @@ Edit the main `contents/_index.md with a brief bio/summary`
 ### Data files
 Data files are used for simple content presented on the homepage.
 
-- [data/skills.json](https://github.com/eddiewebb/hugo-resume/blob/master/exampleSite/data/skills.json)
-- [data/experience.json](https://github.com/eddiewebb/hugo-resume/blob/master/exampleSite/data/experience.json)
-- [data/education.json](https://github.com/eddiewebb/hugo-resume/blob/master/exampleSite/data/education.json)
+- [data/skills.json](https://github.com/HHousen/hh-personal/blob/master/data/skills.json)
+- [data/experience.json](https://github.com/HHousen/hh-personal/blob/master/data/experience.json)
+- [data/education.json](https://github.com/HHousen/hh-personal/blob/master/data/education.json)
 
 ### Projects
-Initially projects were in their own JSON file too, but I decided I wanted to allow more detail and custom formatting.
-Projects are added to one of 2 subfolders of `creations` or `contributions`. The difference indicates your role as originator or colaborator.   Use `hugo add projects/TYPE/name-of-project.md` to leverage the proper archetype.
 
-### Publications
-Similar to projects, create them under `publications`. Include any papers, speaking engagements, articles, etc.
+Add a new project with `hugo new projects/name-of-project/index.md`. You can see some example projects on [HHousen/hh-personal](https://github.com/HHousen/hh-personal/tree/master/content/projects), HHousen's personal site and the demo site for this theme. You can also add a new project to your live site using the `/admin` endpoint/[netlifycms](https://www.netlifycms.org/).
 
-### Template params
+Projects are organized in page bundles. This means images and other files that belong to one project will be grouped together, allowing for better organization. Additionally, using page bundles means that images can be interpreted as resources and thus they can be dynamically resized to the containing element during building, resulting in faster page loads.
 
-All personal information outside the above details is captured by params in [`config.toml`](https://github.com/eddiewebb/hugo-resume/blob/master/exampleSite/config.toml)
+### Template Parameters
 
-```
-[params]
-    firstName = "Eddie"
-    lastName = "Webb"
-    address = "Rollinsford, NH"
-    phone = "1-555-555-1234"
-    contactNote = "Dev Tools Engineer" #used in QR code only
-    profileImage = "img/me.png"
-    email = "email@domain.com"
-    description = "Software Platform Engineer with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud."
-    favicon = "images/favicon.ico"
-
-    # what sections to display.  Setting to false disables navigation and section.
-    showSkills = true
-    showProjects = true
-    showOpenSource = true
-    showPublications = true
-    showExperience = true
-    showEducation = true
-    showQr = true
-
-    # do you want to show git hash on page footer and link to repo? Add commit URl for repo here.
-    gitCommitPrefix = "https://github.com/YOURNAME/REPONAME/commit/"
-
-
-[[params.handles]]
-    name = "LinkedIn"
-    link = "https://www.linkedin.com/in/edwardwebb/"
-
-[[params.handles]]
-    name = "GitHub"
-    link = "https://github.com/eddiewebb/"
-
-[[params.handles]]
-    name = "Bitbucket"
-    link = "https://bitbucket.org/eddiewebb/"
-
-[[params.handles]]
-    name = "Stack Overflow"
-    link = "https://stackoverflow.com/users/story/82880"
-    icon = "stack-overflow" #optional icon attribute used for Font Awesome icons, otherwise the name is lowercased.
-
-[[params.handles]]
-    name = "Keybase"
-    link = "https://keybase.io/edwardawebb"
-    icon = "key" #optional icon attribute used for Font Awesome icons, otherwise the name is lowercased.
-
-[params.google.analytics]
-    trackerID = "XX-123446-01"
-
-[outputs] #only required for search
-    home = ["HTML", "JSON"]
-```
+All personal information and general site configuration is stored in [`config.toml`](https://github.com/HHousen/hh-personal/blob/master/config.toml)
 
 ## Credits
 
-This project ports the Start Bootstrap Resume theme by David Miller to support hugo.
+[eddiewebb/hugo-resume](https://github.com/eddiewebb/hugo-resume) ported the Start Bootstrap Resume theme by David Miller to [HUGO](https://gohugo.io/). This fork of [eddiewebb/hugo-resume](https://github.com/eddiewebb/hugo-resume) expands on the functionality and simplifies some components as discussed above.
 
 ### Start Bootstrap Resume
 
