@@ -13,11 +13,6 @@
       <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="/#about" data-target="#about">About</a>
       </li>
-      {{ if .Site.Params.showSkills }}
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/#skills" data-target="#skills">Skills</a>
-          </li>
-      {{ end }}
       {{ if .Site.Params.showProjects }}
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="/#projects" data-target="#projects">Projects</a>
@@ -41,6 +36,11 @@
       {{ if .Site.Params.showEducation }}
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="/#education" data-target="#education">Education</a>
+          </li>
+      {{ end }}
+      {{ if .Site.Params.showSkills }}
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/#skills" data-target="#skills">Skills</a>
           </li>
       {{ end }}
       {{ if .Site.Params.showBlog }}
