@@ -4,7 +4,7 @@
     {{ range $index, $value := .Site.Data.experience.experiences }}
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
           <div class="resume-content mr-auto">
-            <h3 class="mb-0">{{ .title }}</h3>
+            <h3 class="mb-0">{{ .title | markdownify }}</h3>
             <div class="subheading mb-3">{{ .subtitle | markdownify }}</div>
             <p class="mb-0">{{ .summary | markdownify }}</p>
             <!-- <p class="wow tdFadeInRight" style="animation-delay: calc({{add $index 1.5}}s * 0.4)">{{ .summary }}</p> -->
