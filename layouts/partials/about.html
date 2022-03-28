@@ -3,30 +3,30 @@
       <section class="resume-section min-height p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
           <div>
-            <h1 class="mb-0 wow tdExpandInBounce" style="animation-delay: 0.2s">{{ .Site.Params.firstName }}
+            <h1 class="mb-0 animated tdExpandInBounce" style="animation-delay: 0.2s">{{ .Site.Params.firstName }}
               <span class="text-primary">{{ .Site.Params.lastName }}</span>
             </h1>
-            <div class="subheading wow tdFadeInDown {{ if not .Site.Params.news }}mb-4{{ end }}" style="animation-delay: 0.2s;display: inline-block">{{ .Site.Params.address }} ·
+            <div class="subheading animated tdFadeInDown {{ if not .Site.Params.news }}mb-4{{ end }}" style="animation-delay: 0.2s;display: inline-block">{{ .Site.Params.address }} ·
               <a href="mailto:{{ substr .Site.Params.email 0 5}}-remove-{{ substr .Site.Params.email 5 }}">{{ substr .Site.Params.email 0 5}}<span style="display:none">-remove-</span>{{ substr .Site.Params.email 5 }}</a>
             </div>
             {{ if .Site.Params.news }}
             <div class="mt-1 mb-3">
             {{ end }}
               {{ if .Site.Params.resumePDF }}
-                <a href="{{ .Site.Params.resumePDF | absURL }}" role="button" class="btn btn-primary {{ if .Site.Params.news }}float-md-right mb-2{{ else }} float-sm-right {{end}} wow tdFadeInLeft" style="animation-delay: 0.4s">PDF Resume</a>
+                <a href="{{ .Site.Params.resumePDF | absURL }}" role="button" class="btn btn-primary {{ if .Site.Params.news }}float-md-right mb-2{{ else }} float-sm-right {{end}} animated tdFadeInLeft" style="animation-delay: 0.4s">PDF Resume</a>
               {{ end }}
               {{ with .Site.Params.news }}
-                <a href="{{ .newsLink }}" role="button" class="btn btn-info mb-2 wow tdFadeInRight" style="animation-delay: 0.4s">{{ .newsText | markdownify }}</a>
+                <a href="{{ .newsLink }}" role="button" class="btn btn-info mb-2 animated tdFadeInRight" style="animation-delay: 0.4s">{{ .newsText | markdownify }}</a>
               {{ end }}
             {{ if .Site.Params.news }}
             </div>
             {{ end }}
         </div>
 
-        <div class="wow tdFadeInRight lead mb-4" style="animation-delay: 0.4s;font-weight: 400;">
+        <div class="animated tdFadeInRight lead mb-4" style="animation-delay: 0.4s;font-weight: 400;">
           {{ .Content }}
         </div>
-              <div class="social-icons wow tdFadeInUp" style="animation-delay: 0.6s">
+              <div class="social-icons animated tdFadeInUp" style="animation-delay: 0.6s">
                 {{ range .Site.Params.social }}
                 <a href="{{ .link }}" data-toggle="tooltip" title="{{ .name }}">
                   <i class="{{ .icon }}"></i>

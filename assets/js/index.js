@@ -24,7 +24,6 @@
     $('[data-toggle="tooltip"]').tooltip()
   })
 
-  new WOW({mobile:false}).init();
   // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#sideNav'

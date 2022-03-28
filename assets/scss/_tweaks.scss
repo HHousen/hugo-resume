@@ -7,12 +7,6 @@ body {
   }
 }
 
-.wow {
-  @include media-breakpoint-up(sm) {
-    visibility: hidden;
-  }
-}
-
 footer {
   // position: absolute;
   // right: 0;
