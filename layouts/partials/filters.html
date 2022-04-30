@@ -1,6 +1,11 @@
-<div id="filters" class="btn-group flex-wrap filter-button-group mb-2">
-  <button type="button" class="btn btn-outline-secondary active" data-filter="*">All</button>
-  {{ range .Site.Params.tags }}
-    <button type="button" class="btn btn-outline-secondary" data-filter=".{{ urlize . }}">{{ . | title}}</button>
-  {{ end }}
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div id="filters" class="btn-group flex-wrap filter-button-group mr-2 mb-2">
+    <button type="button" class="btn btn-outline-secondary active" data-filter="*">All</button>
+    {{ range .Site.Params.tags }}
+      <button type="button" class="btn btn-outline-secondary" data-filter=".{{ urlize . }}">{{ . | title}}</button>
+    {{ end }}
+  </div>
+  <div class="btn-group mb-2">
+    <button type="button" class="btn btn-outline-secondary" id="sort-button">Sort by Date</button>
+  </div>
 </div>
