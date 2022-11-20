@@ -7,7 +7,7 @@
     {{ partial "filters" . }}
     <div class="row" id="grid">
       {{ range .Data.Pages.ByWeight }}
-        <div class="col-md-3 grid-item {{ range .Params.tags }}{{ urlize . }} {{ end }}">
+        <div class="col-md-3 grid-item {{ range .Params.tags }}{{ urlize . }} {{ end }}" data-date="{{ .Date.Unix }}" data-weight="{{ .Weight }}">
           {{ partial (printf "content/%s%s" .Section "Summary") . }}
         </div>
       {{ end }}
