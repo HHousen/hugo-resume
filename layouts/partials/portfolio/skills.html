@@ -6,9 +6,8 @@
       <ul>
       {{ range .skills }}
         {{ if isset . "name" }}
-          {{ $devicon := cond (in $.Site.Data.devicons (lower .icon)) (lower .icon) (cond (in $.Site.Data.devicons (lower .name)) (lower .name) "terminal_badge") }}
           <li class="list-inline-item">
-            <i class="devicons devicons-{{ $devicon }}"></i>
+            <i class="icon-{{ .icon }}"></i>
             {{if isset . "link"}}
                 <a href="{{.link}}">{{ .name }}</a>
             {{ else }}
@@ -17,7 +16,7 @@
           </li>
         {{ else }}
           <li class="list-inline-item">
-            <i class="devicons devicons-{{ cond (in $.Site.Data.devicons (lower .)) (lower .) "terminal_badge" }}"></i>
+            <i class="icon-code }}"></i>
             {{ . }}
           </li>
         {{ end }}
