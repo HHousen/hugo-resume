@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?q87swa');
-  src:  url('../fonts/icomoon.eot?q87swa#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?q87swa') format('truetype'),
-    url('../fonts/icomoon.woff?q87swa') format('woff'),
-    url('../fonts/icomoon.svg?q87swa#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?sgn96m');
+  src:  url('../fonts/icomoon.eot?sgn96m#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?sgn96m') format('truetype'),
+    url('../fonts/icomoon.woff?sgn96m') format('woff'),
+    url('../fonts/icomoon.svg?sgn96m#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -14,16 +14,29 @@
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
-  display: inline-block;
   font-style: normal;
+  font-weight: normal;
   font-variant: normal;
-  text-rendering: auto;
+  text-transform: none;
+  line-height: 1;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-azure:before {
+  content: "\e909";
+}
+.icon-supabase:before {
+  content: "\e90a";
+}
+.icon-tailwindcss:before {
+  content: "\e905";
+}
+.icon-nextdotjs:before {
+  content: "\e908";
+}
 .icon-amazonaws:before {
   content: "\e900";
 }
@@ -99,6 +112,9 @@
 .icon-python-plain:before {
   content: "\eb89";
 }
+.icon-power:before {
+  content: "\e9b5";
+}
 .icon-globe:before {
   content: "\e901";
 }
@@ -108,15 +124,9 @@
 .icon-envelope:before {
   content: "\e904";
 }
-.icon-twitter:before {
-  content: "\e905";
-}
 .icon-github:before {
   content: "\e906";
 }
 .icon-linkedin-square:before {
   content: "\e907";
-}
-.icon-power:before {
-  content: "\e9b5";
 }
