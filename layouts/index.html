@@ -1,5 +1,8 @@
 {{ define "main" }}
    {{ partial "about.html" .}}
+   {{ if .Site.Params.showExperience }}
+       {{ partial "portfolio/experience.html" . }}
+   {{ end }}
    {{ if .Site.Params.showProjects }}
       {{ with .Site.GetPage "section" "projects" }}
          {{ .Scratch.Set "sectionId" "projects" }}
@@ -17,9 +20,6 @@
          {{ .Scratch.Set "sectionId" "publications" }}
          {{ partial "content/sectionSummary" . }}
       {{ end }}
-   {{ end }}
-   {{ if .Site.Params.showExperience }}
-       {{ partial "portfolio/experience.html" . }}
    {{ end }}
    {{ if .Site.Params.showEducation }}
        {{ partial "portfolio/education.html" . }}
