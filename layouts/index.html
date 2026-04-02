@@ -34,6 +34,9 @@
       {{ end }}
    {{ end }}
 {{ end }}
+{{ define "headfiles" }}
+  {{ partial "js-compile" (dict "jsSrc" "js/email-decode.js" "loading" "defer") }}
+{{ end }}
 {{ define "footerfiles" }}
   {{ partial "isotope" . }}
 {{ end }}

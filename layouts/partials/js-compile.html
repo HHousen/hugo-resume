@@ -1,9 +1,18 @@
 <!-- Custom Script -->
 
+{{ $loading := default "async" .loading }}
 {{ if eq (getenv "HUGO_ENV") "production" }} <!-- Production Environment -->
 {{ $js := resources.Get .jsSrc | minify | fingerprint }}
+{{ if eq $loading "defer" }}
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ else }}
 <script async src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ end }}
 {{ else }} <!-- Development Environment -->
 {{ $js := resources.Get .jsSrc }}
+{{ if eq $loading "defer" }}
+<script defer src="{{ $js.RelPermalink }}"></script>
+{{ else }}
 <script async src="{{ $js.RelPermalink }}"></script>
+{{ end }}
 {{ end }}
