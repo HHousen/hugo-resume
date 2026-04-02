@@ -1,6 +1,5 @@
-{{- $email := .email -}}
 {{- $placeholder := default "please@enable.javascript" .placeholder -}}
-{{- $base := $email | base64Encode -}}
+{{- $base := .email | base64Encode -}}
 {{- $scrambled := replaceRE "(.)(.)(.)(.)" "$4$3$2$1" $base -}}
 {{- $rotated := printf "%s%s" (substr $scrambled 8) (substr $scrambled 0 8) -}}
 {{- $obfuscated := replaceRE "(.{4})" "${1}~" $rotated -}}
@@ -9,24 +8,22 @@
   rel="nofollow noindex"
   {{ with .title }}title="{{ . }}"{{ end }}
   {{ with .dataToggle }}data-toggle="{{ . }}"{{ end }}>
-  {{- if .icon -}}
-  <i class="{{ .icon }}" aria-hidden="true"></i>
+  {{- with .icon -}}
+  <i class="{{ . }}" aria-hidden="true"></i>
   <span class="sr-only js-email-text"></span>
   {{- else -}}
   <span class="js-email-text"></span>
-  {{- end -}}
+  {{- end }}
 </a>
 <noscript>
-  {{- if .icon -}}
   <a href="mailto:{{ $placeholder }}"
     rel="nofollow noindex"
     {{ with .title }}title="{{ . }}"{{ end }}>
-    <i class="{{ .icon }}" aria-hidden="true"></i>
+    {{- with .icon -}}
+    <i class="{{ . }}" aria-hidden="true"></i>
     <span class="sr-only">{{ $placeholder }}</span>
+    {{- else -}}
+    {{ $placeholder }}
+    {{- end }}
   </a>
-  {{- else -}}
-  <a href="mailto:{{ $placeholder }}"
-    rel="nofollow noindex"
-    {{ with .title }}title="{{ . }}"{{ end }}>{{ $placeholder }}</a>
-  {{- end -}}
 </noscript>
