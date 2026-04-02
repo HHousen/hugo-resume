@@ -6,14 +6,12 @@
   integrity="sha512-Oy5BruJdE3gP9+LMJ11kC5nErkh3p4Y0GawT1Jrcez4RTDxODf3M/KP3pEsgeOYxWejqy2SPnj+QMpgtvhDciQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- JavaScript Plugins -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
-  integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 {{ partial "js-compile" (dict "jsSrc" "js/resume.js") }}
 
 {{ if .IsHome }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
+  integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {{ partial "js-compile" (dict "jsSrc" "js/index.js") }}
 {{ end }}
 
