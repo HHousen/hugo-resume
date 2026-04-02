@@ -1,5 +1,9 @@
 // Global styling for this template
 
+html.no-js .js-email-link {
+  display: none;
+}
+
 body {
   @include body-font;
   padding-top: 54px;

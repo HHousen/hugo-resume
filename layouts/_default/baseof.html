@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script>
+    document.documentElement.classList.remove('no-js');
+  </script>
   {{ if .IsHome }}
     <title>{{ .Site.Title }}</title>
     <meta property="og:title" content="{{ .Site.Title }}" />
