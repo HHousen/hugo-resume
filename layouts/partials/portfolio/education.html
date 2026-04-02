@@ -7,8 +7,8 @@
                   <h3 class="mb-0">{{ .school | markdownify }}</h3>
                   <div class="subheading mb-3">{{ .degree }}</div>
                   <div class="font-weight-bold">{{ .major | markdownify }}</div>
-                  {{ range $key, $value := .notes }}
-                    <p class="mb-0"><span class="font-weight-bold">{{ $key }}: </span>{{ . | markdownify }}</p>
+                  {{ range .notes }}
+                    <p class="mb-0"><span class="font-weight-bold">{{ .label }}: </span>{{ .value | markdownify }}</p>
                   {{ end }}
                 </div>
                 <div class="resume-date text-md-right">
