@@ -1,7 +1,7 @@
 <div class="card mb-4">
   {{ with .Resources.GetMatch "image" }}
     {{ $image := .Fit "500x500" }}
-    <a href="{{ $.Permalink }}"><img src="{{ $image.RelPermalink }}" class="card-img-top" loading="lazy"></a>
+    <a href="{{ $.Permalink }}"><img src="{{ $image.RelPermalink }}" class="card-img-top" width="{{ $image.Width }}" height="{{ $image.Height }}" loading="lazy"></a>
   {{ end }}
   <div class="card-body">
     <h4 class="card-title">{{ .Title }}</h4>

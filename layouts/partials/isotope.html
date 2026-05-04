@@ -1,4 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js" integrity="sha256-aZcT9p29I4e3w7VyBLzcPYbTrDUHGKetZaUpPg0sU+s=" crossorigin="anonymous"></script>
 <script>
   var $grid = $("#grid").isotope({
@@ -8,9 +7,6 @@
       date: "[data-date] parseInt",
       weight: "[data-weight] parseInt"
     }
-  });
-  $grid.imagesLoaded().progress(function() {
-    $grid.isotope("layout");
   });
   $(".filter-button-group").on( "click", "button", function() {
     var filterValue = $(this).attr("data-filter");
