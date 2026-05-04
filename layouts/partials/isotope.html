@@ -3,6 +3,9 @@
   var $grid = $("#grid").isotope({
     itemSelector: ".grid-item",
     layoutMode: "fitRows",
+    fitRows: {
+      gutter: -2
+    },
     getSortData: {
       date: "[data-date] parseInt",
       weight: "[data-weight] parseInt"
